@@ -1,22 +1,59 @@
-# Web personal · Darwin Fabián Vizhnay Corral
+# Darwin Fabián Vizhnay Corral · Portfolio
 
-Web estática (HTML + CSS + JS, sin build). Se abre con doble clic en `index.html` o con un servidor local.
+Web personal y portfolio de **Darwin Fabián Vizhnay Corral**, desarrollador web full stack junior (PHP, Java, JavaScript y SQL) y estudiante de Data Engineering e IA en Madrid.
 
-## Qué editar
+**Web en producción:** https://darwinnn777.github.io
 
-Todo lo que cambia con el tiempo está en `lib/manifest.js`:
+## Qué es
 
-- **`contact`**: email, LinkedIn y GitHub. Lo que dejes vacío no se muestra.
-- **`projects`**: cuando tengas proyectos, añádelos ahí (hay un ejemplo en el comentario) y los huecos "próximamente" se sustituyen solos. Las capturas van en `assets/img/` en formato `.webp`.
-- **Textos en inglés**: `i18n.en` en el mismo archivo. El español está en `index.html`.
+Una web de presentación con mis datos, mi trayectoria, mi formación y mi stack, y un espacio para el portfolio de proyectos. Está disponible en español e inglés.
 
-## Publicar en GitHub Pages
+## Características
 
-1. Crea un repositorio público llamado `darwinnn777.github.io` (así la web queda en `https://darwinnn777.github.io`).
-2. Sube el **contenido de esta carpeta** (`index.html`, `styles.css`, `main.js`, `scene.js`, `lib/`, `assets/`, `.nojekyll`) a la raíz del repositorio, rama `main`.
-3. En el repositorio: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)`**.
-4. En 1–2 minutos estará online.
+- Diseño oscuro y minimalista, con una escena de partículas en WebGL que cambia de forma a medida que se hace scroll.
+- Bilingüe (ES / EN), con el idioma elegido guardado en el navegador.
+- Responsive: probada en escritorio y móvil.
+- Cuidada en accesibilidad: enlace para saltar al contenido, foco visible, textos alternativos en las imágenes y estructura de encabezados semántica.
+- Funciona sin JavaScript: el contenido está en el HTML y el JS solo añade las animaciones.
+- Respeta `prefers-reduced-motion`.
+- Sin paso de compilación ni dependencias de npm.
 
-GitHub Pages no permite configurar cabeceras de caché, así que **cada vez que cambies `styles.css`, `main.js`, `scene.js` o `lib/*.js`**, cambia el `?v=YYYYMMDD` de esas líneas en `index.html` (hay 8 ocurrencias) para que los visitantes reciban la versión nueva.
+## Tecnologías
 
-`assets/photos/source/` guarda la foto original; puedes no subirla.
+- HTML5, CSS3 y JavaScript sin frameworks
+- [Three.js](https://threejs.org/) (escena de partículas)
+- [GSAP](https://gsap.com/) y ScrollTrigger (animaciones ligadas al scroll)
+- Tipografías de Google Fonts: Cormorant Garamond, Manrope y JetBrains Mono
+- Alojada en GitHub Pages
+
+## Ejecutar en local
+
+No requiere instalación. Abre `index.html` en el navegador o, mejor, sirve la carpeta con un servidor local:
+
+```bash
+python -m http.server 8000
+```
+
+y visita http://localhost:8000.
+
+## Estructura
+
+```
+index.html      página principal
+styles.css      estilos
+main.js         interfaz: idioma, navegación, animaciones al scroll
+scene.js        escena WebGL de partículas
+lib/            librerías (Three.js, GSAP) y datos de la web (manifest.js)
+assets/         imágenes y favicon
+```
+
+## Contacto
+
+- LinkedIn: [Darwin Fabián Vizhnay Corral](https://www.linkedin.com/in/darwin-fabi%C3%A1n-vizhnay-corral-b73b48289/)
+- GitHub: [@darwinnn777](https://github.com/darwinnn777)
+
+## Licencias
+
+Three.js se distribuye bajo licencia MIT y GSAP bajo su [licencia estándar sin coste](https://gsap.com/standard-license/).
+
+© Darwin Fabián Vizhnay Corral. Todos los derechos reservados sobre el código propio, los textos y las imágenes.
