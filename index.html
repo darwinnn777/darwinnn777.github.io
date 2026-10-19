@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Darwin Fabián Vizhnay Corral — Desarrollador web full stack</title>
+  <meta name="description" content="Darwin Fabián Vizhnay Corral, desarrollador web full stack junior de Madrid. PHP, Java, JavaScript y SQL. Estudiante de Data Engineering e IA.">
+  <meta name="theme-color" content="#05060b">
+  <meta name="color-scheme" content="dark">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Darwin Fabián Vizhnay Corral — Desarrollador web full stack">
+  <meta property="og:description" content="Desarrollador web full stack junior. PHP · Java · JavaScript · SQL. Estudiante de Data Engineering e IA.">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap">
+
+  <link rel="stylesheet" href="styles.css?v=20261020">
+  <script>
+    /* Marca "js" para los estilos de entrada. Si main.js no llega a arrancar, a los 7 s se muestra todo igualmente. */
+    (function (d) {
+      d.classList.add("js");
+      setTimeout(function () {
+        if (!d.classList.contains("js-ok")) d.classList.add("is-ready", "reveal-all");
+      }, 7000);
+    })(document.documentElement);
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Saltar al contenido</a>
+
+  <!-- Splash -->
+  <div class="splash" data-splash aria-hidden="true">
+    <div class="splash-mark">DV</div>
+    <div class="splash-bar"><span></span></div>
+  </div>
+
+  <!-- Escena persistente + capas de contraste -->
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div class="scrim" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Navegación -->
+  <header class="nav" data-nav>
+    <div class="nav-inner container">
+      <a class="brand" href="#inicio" aria-label="Darwin Vizhnay — inicio">
+        <span class="brand-mark mono">DV</span>
+        <span class="brand-name">Darwin Vizhnay</span>
+      </a>
+
+      <nav class="nav-links" id="menu" aria-label="Principal">
+        <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+        <a href="#trayectoria" data-i18n="nav.exp">Trayectoria</a>
+        <a href="#formacion" data-i18n="nav.edu">Formación</a>
+        <a href="#stack" data-i18n="nav.stack">Stack</a>
+        <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+        <a href="#contacto" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <div class="nav-tools">
+        <div class="lang" role="group" aria-label="Idioma" data-i18n-aria="nav.lang">
+          <button type="button" class="mono" data-lang="es" aria-pressed="true">ES</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" class="mono" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú" data-i18n-aria="nav.menu" data-menu-toggle>
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- 00 · Inicio -->
+    <section class="hero" id="inicio">
+      <div class="hero-inner container" data-hero>
+        <p class="kicker mono" data-in style="--d:0s">
+          <span class="dot" aria-hidden="true"></span>
+          <span data-i18n="hero.kicker">Madrid, España · Full Stack junior · Datos &amp; IA</span>
+        </p>
+        <h1 class="hero-title">
+          <span class="line"><span data-in style="--d:.08s">Darwin</span></span>
+          <span class="line"><span data-in style="--d:.2s"><em>Vizhnay</em></span></span>
+        </h1>
+        <p class="hero-sub" data-in style="--d:.4s" data-i18n="hero.sub">Desarrollador web full stack junior. Escribo en PHP, Java, JavaScript y SQL, y ahora estudio ingeniería de datos e inteligencia artificial.</p>
+        <div class="hero-actions" data-in style="--d:.52s">
+          <a class="btn btn-primary" href="#proyectos" data-i18n="hero.cta1">Ver proyectos</a>
+          <a class="btn btn-ghost" href="#contacto" data-i18n="hero.cta2">Contacto</a>
+        </div>
+      </div>
+      <a class="scroll-cue mono" href="#sobre-mi" data-in style="--d:.7s">
+        <span data-i18n="hero.scroll">Desliza</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- 01 · Sobre mí -->
+    <section class="sec about" id="sobre-mi" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <p class="sec-kicker mono reveal" data-i18n="about.k">01 — Sobre mí</p>
+          <h2 class="sec-title reveal" id="about-title" data-i18n="about.h">Me gusta que las cosas funcionen, y que <em>se vean bien</em>.</h2>
+          <p class="lede reveal" data-i18n="about.p1">Soy Darwin Fabián Vizhnay Corral, desarrollador web full stack junior de Alcorcón, en Madrid. Me formé en Desarrollo de Aplicaciones Web y trabajo con PHP, Java, JavaScript y SQL.</p>
+          <p class="body reveal" data-i18n="about.p2">Hice prácticas de desarrollo web con WordPress e infraestructura web, y compaginé los estudios con un trabajo de cara al público. Ahora doy el siguiente paso: ingeniería de datos e IA en Tajamar.</p>
+          <dl class="facts reveal">
+            <div><dt class="mono" data-i18n="about.f1l">Ubicación</dt><dd data-i18n="about.f1v">Alcorcón, Madrid</dd></div>
+            <div><dt class="mono" data-i18n="about.f2l">Perfil</dt><dd data-i18n="about.f2v">Full Stack Web Developer · Junior</dd></div>
+            <div><dt class="mono" data-i18n="about.f3l">Estudiando</dt><dd data-i18n="about.f3v">Data Engineering &amp; IA</dd></div>
+          </dl>
+        </div>
+
+        <figure class="portrait reveal" style="--d:.1s">
+          <div class="portrait-frame" data-tilt>
+            <img src="assets/img/portrait.webp" width="900" height="1200" loading="lazy" decoding="async"
+                 alt="Retrato de Darwin Fabián Vizhnay Corral" data-i18n-alt="about.alt">
+            <span class="portrait-tint" aria-hidden="true"></span>
+          </div>
+          <figcaption class="mono"><span data-i18n="about.cap">Darwin · Madrid</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 02 · Trayectoria -->
+    <section class="sec" id="trayectoria" aria-labelledby="exp-title">
+      <div class="container">
+        <p class="sec-kicker mono reveal" data-i18n="exp.k">02 — Trayectoria</p>
+        <h2 class="sec-title reveal" id="exp-title" data-i18n="exp.h">Del trato con clientes <em>al código</em>.</h2>
+
+        <ol class="tl" data-timeline>
+          <li class="tl-line" aria-hidden="true"><span class="tl-fill" data-tl-fill></span></li>
+
+          <li class="tl-item reveal">
+            <p class="tl-date mono" data-i18n="exp.1.d">Ene – Abr 2026</p>
+            <div class="tl-main">
+              <h3 data-i18n="exp.1.r">Becario de desarrollo web</h3>
+              <p class="tl-org" data-i18n="exp.1.o">ROS Iberia S.L. · Guadalajara · Híbrido</p>
+            </div>
+            <ul class="tags" aria-label="Aptitudes" data-i18n-aria="exp.skills">
+              <li>WordPress</li>
+              <li data-i18n="exp.1.t2">Infraestructura web</li>
+            </ul>
+          </li>
+
+          <li class="tl-item reveal">
+            <p class="tl-date mono" data-i18n="exp.2.d">Jul 2024 – Sep 2026</p>
+            <div class="tl-main">
+              <h3 data-i18n="exp.2.r">Dependiente · media jornada</h3>
+              <p class="tl-org" data-i18n="exp.2.o">IKEA · Alcorcón · Presencial</p>
+            </div>
+            <ul class="tags" aria-label="Aptitudes" data-i18n-aria="exp.skills">
+              <li data-i18n="exp.2.t1">Trabajo en equipo</li>
+              <li data-i18n="exp.2.t2">Gestión de ventas</li>
+            </ul>
+          </li>
+
+          <li class="tl-item reveal">
+            <p class="tl-date mono" data-i18n="exp.3.d">Mar – Jun 2024</p>
+            <div class="tl-main">
+              <h3 data-i18n="exp.3.r">Auxiliar administrativo · prácticas</h3>
+              <p class="tl-org" data-i18n="exp.3.o">Mapfre · Madrid · Presencial</p>
+            </div>
+            <ul class="tags" aria-hidden="true"></ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 03 · Formación -->
+    <section class="sec" id="formacion" aria-labelledby="edu-title">
+      <div class="container">
+        <p class="sec-kicker mono reveal" data-i18n="edu.k">03 — Formación</p>
+        <h2 class="sec-title reveal" id="edu-title" data-i18n="edu.h">Siempre estudiando <em>algo nuevo</em>.</h2>
+
+        <div class="edu-grid">
+          <article class="card reveal">
+            <p class="card-meta mono">
+              <span data-i18n="edu.1.d">Sep 2026 – Jun 2027</span>
+              <span class="pill"><i aria-hidden="true"></i><span data-i18n="edu.1.s">En curso</span></span>
+            </p>
+            <h3>Tajamar</h3>
+            <p class="card-sub" data-i18n="edu.1.r">Data Engineer &amp; IA</p>
+          </article>
+
+          <article class="card reveal" style="--d:.08s">
+            <p class="card-meta mono"><span data-i18n="edu.2.d">Sep 2024 – May 2026</span></p>
+            <h3>IES La Arboleda</h3>
+            <p class="card-sub" data-i18n="edu.2.r">Ciclo Formativo de Grado Superior · Desarrollo de Aplicaciones Web</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 · Stack -->
+    <section class="sec" id="stack" aria-labelledby="stack-title">
+      <div class="container">
+        <p class="sec-kicker mono reveal" data-i18n="stack.k">04 — Stack</p>
+        <h2 class="sec-title reveal" id="stack-title" data-i18n="stack.h">Con qué <em>trabajo</em>.</h2>
+
+        <ul class="stack-list">
+          <li class="stack-row reveal"><span class="mono idx">01</span><span class="stack-name">PHP</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
+          <li class="stack-row reveal"><span class="mono idx">02</span><span class="stack-name">Java</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
+          <li class="stack-row reveal"><span class="mono idx">03</span><span class="stack-name">JavaScript</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
+          <li class="stack-row reveal"><span class="mono idx">04</span><span class="stack-name">SQL</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
+          <li class="stack-row reveal"><span class="mono idx">05</span><span class="stack-name">WordPress</span><span class="mono grp">Web</span></li>
+          <li class="stack-row reveal"><span class="mono idx">06</span><span class="stack-name" data-i18n="stack.n6">Infraestructura web</span><span class="mono grp">Web</span></li>
+          <li class="stack-row is-next reveal"><span class="mono idx">07</span><span class="stack-name" data-i18n="stack.n7">Ingeniería de datos</span><span class="mono grp" data-i18n="stack.g3">Ahora estudio</span></li>
+          <li class="stack-row is-next reveal"><span class="mono idx">08</span><span class="stack-name" data-i18n="stack.n8">Inteligencia artificial</span><span class="mono grp" data-i18n="stack.g3">Ahora estudio</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 05 · Proyectos -->
+    <section class="sec" id="proyectos" aria-labelledby="proj-title">
+      <div class="container">
+        <p class="sec-kicker mono reveal" data-i18n="proj.k">05 — Proyectos</p>
+        <h2 class="sec-title reveal" id="proj-title" data-i18n="proj.h">Próximos <em>proyectos</em>.</h2>
+        <p class="body proj-note reveal" data-i18n="proj.p">Todavía estoy preparando mis primeros proyectos de portfolio. Este espacio crecerá con cada uno que publique.</p>
+
+        <ol class="proj-list" data-projects>
+          <li class="proj is-placeholder reveal">
+            <span class="mono idx">01</span>
+            <span class="proj-title" data-i18n="proj.t">Proyecto — próximamente</span>
+            <span class="mono proj-meta" data-i18n="proj.s">En preparación</span>
+          </li>
+          <li class="proj is-placeholder reveal">
+            <span class="mono idx">02</span>
+            <span class="proj-title" data-i18n="proj.t">Proyecto — próximamente</span>
+            <span class="mono proj-meta" data-i18n="proj.s">En preparación</span>
+          </li>
+          <li class="proj is-placeholder reveal">
+            <span class="mono idx">03</span>
+            <span class="proj-title" data-i18n="proj.t">Proyecto — próximamente</span>
+            <span class="mono proj-meta" data-i18n="proj.s">En preparación</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- 06 · Contacto -->
+    <section class="sec contact" id="contacto" aria-labelledby="contact-title">
+      <div class="container">
+        <p class="sec-kicker mono reveal" data-i18n="contact.k">06 — Contacto</p>
+        <h2 class="contact-title reveal" id="contact-title" data-i18n="contact.h"><em>Hablemos.</em></h2>
+        <p class="lede contact-lede reveal" data-i18n="contact.p">Si tienes una oferta, una idea o simplemente quieres saludar, escríbeme.</p>
+        <ul class="contact-links reveal" data-contact-links hidden></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner mono">
+      <p>© <span data-year>2026</span> Darwin Fabián Vizhnay Corral</p>
+      <p data-i18n="foot.loc">Alcorcón, Madrid</p>
+      <a href="#inicio" data-i18n="foot.top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script defer src="lib/gsap.min.js?v=20261020"></script>
+  <script defer src="lib/ScrollTrigger.min.js?v=20261020"></script>
+  <script defer src="lib/three.min.js?v=20261020"></script>
+  <script defer src="lib/manifest.js?v=20261020"></script>
+  <script defer src="scene.js?v=20261020"></script>
+  <script defer src="main.js?v=20261020"></script>
+</body>
+</html>
