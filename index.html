@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap">
 
-  <link rel="stylesheet" href="styles.css?v=20261020">
+  <link rel="stylesheet" href="styles.css?v=20261021">
   <script>
     /* Marca "js" para los estilos de entrada. Si main.js no llega a arrancar, a los 7 s se muestra todo igualmente. */
     (function (d) {
@@ -82,7 +82,7 @@
           <span data-i18n="hero.kicker">Madrid, España · Full Stack junior · Datos &amp; IA</span>
         </p>
         <h1 class="hero-title">
-          <span class="line"><span data-in style="--d:.08s">Darwin</span></span>
+          <span class="line"><span data-in style="--d:.08s">Darwin Fabián</span></span>
           <span class="line"><span data-in style="--d:.2s"><em>Vizhnay</em></span></span>
         </h1>
         <p class="hero-sub" data-in style="--d:.4s" data-i18n="hero.sub">Desarrollador web full stack junior. Escribo en PHP, Java, JavaScript y SQL, y ahora estudio ingeniería de datos e inteligencia artificial.</p>
@@ -199,16 +199,61 @@
         <p class="sec-kicker mono reveal" data-i18n="stack.k">04 — Stack</p>
         <h2 class="sec-title reveal" id="stack-title" data-i18n="stack.h">Con qué <em>trabajo</em>.</h2>
 
-        <ul class="stack-list">
-          <li class="stack-row reveal"><span class="mono idx">01</span><span class="stack-name">PHP</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
-          <li class="stack-row reveal"><span class="mono idx">02</span><span class="stack-name">Java</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
-          <li class="stack-row reveal"><span class="mono idx">03</span><span class="stack-name">JavaScript</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
-          <li class="stack-row reveal"><span class="mono idx">04</span><span class="stack-name">SQL</span><span class="mono grp" data-i18n="stack.g1">Lenguajes</span></li>
-          <li class="stack-row reveal"><span class="mono idx">05</span><span class="stack-name">WordPress</span><span class="mono grp">Web</span></li>
-          <li class="stack-row reveal"><span class="mono idx">06</span><span class="stack-name" data-i18n="stack.n6">Infraestructura web</span><span class="mono grp">Web</span></li>
-          <li class="stack-row is-next reveal"><span class="mono idx">07</span><span class="stack-name" data-i18n="stack.n7">Ingeniería de datos</span><span class="mono grp" data-i18n="stack.g3">Ahora estudio</span></li>
-          <li class="stack-row is-next reveal"><span class="mono idx">08</span><span class="stack-name" data-i18n="stack.n8">Inteligencia artificial</span><span class="mono grp" data-i18n="stack.g3">Ahora estudio</span></li>
-        </ul>
+        <div class="stack-group">
+          <h3 class="mono stack-label reveal" data-i18n="stack.g1">Lo que ya manejo</h3>
+          <ul class="medals">
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/html5.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">HTML</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/css3.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">CSS</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/javascript.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">JavaScript</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/php.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">PHP</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/java.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">Java</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/csharp.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">C#</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/mysql.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">SQL · MySQL</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/aws.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">AWS</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="stack-group">
+          <h3 class="mono stack-label reveal" data-i18n="stack.g3">Ahora estudio</h3>
+          <ul class="medals">
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/python.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">Python</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/azure.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">Azure</span>
+            </li>
+            <li class="medal reveal">
+              <span class="medal-coin"><span class="medal-spin"><span class="medal-face"><img src="assets/tech/databricks.svg" alt="" width="64" height="64" loading="lazy" decoding="async"></span></span></span>
+              <span class="medal-name">Databricks</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -258,11 +303,11 @@
     </div>
   </footer>
 
-  <script defer src="lib/gsap.min.js?v=20261020"></script>
-  <script defer src="lib/ScrollTrigger.min.js?v=20261020"></script>
-  <script defer src="lib/three.min.js?v=20261020"></script>
-  <script defer src="lib/manifest.js?v=20261020"></script>
-  <script defer src="scene.js?v=20261020"></script>
-  <script defer src="main.js?v=20261020"></script>
+  <script defer src="lib/gsap.min.js?v=20261021"></script>
+  <script defer src="lib/ScrollTrigger.min.js?v=20261021"></script>
+  <script defer src="lib/three.min.js?v=20261021"></script>
+  <script defer src="lib/manifest.js?v=20261021"></script>
+  <script defer src="scene.js?v=20261021"></script>
+  <script defer src="main.js?v=20261021"></script>
 </body>
 </html>

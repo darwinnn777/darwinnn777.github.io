@@ -148,7 +148,7 @@
   scene.add(points);
 
   /* ---------- Fotogramas clave por sección ---------- */
-  var KF = [
+  var KF_HOME = [
     { id: "inicio",      m: 0, cam: [0, 0.5, 17],  look: [0, 0, 0],     fov: 52 },
     { id: "sobre-mi",    m: 0, cam: [-5, 1.5, 11], look: [1, 0, 0],     fov: 50 },
     { id: "trayectoria", m: 1, cam: [0, 6, 13],    look: [0, -1, 0],    fov: 55 },
@@ -158,16 +158,29 @@
     { id: "contacto",    m: 3, cam: [0, 0, 22],    look: [0, 0, 0],     fov: 45 }
   ];
 
+  // Páginas de proyecto (<body data-scene="project">): recorrido más corto
+  var KF_PROJECT = [
+    { id: "proyecto-hero",    m: 1, cam: [0, 5, 14],  look: [0, -1, 0], fov: 55 },
+    { id: "proyecto-detalle", m: 2, cam: [5, 1, 11],  look: [0, 0, 0],  fov: 50 },
+    { id: "proyecto-galeria", m: 0, cam: [-5, 1, 12], look: [0, 0, 0],  fov: 52 },
+    { id: "proyecto-cierre",  m: 3, cam: [0, 0, 22],  look: [0, 0, 0],  fov: 45 }
+  ];
+
+  var KF_ALL = document.body.getAttribute("data-scene") === "project" ? KF_PROJECT : KF_HOME;
+  var KF = KF_ALL.slice();
   var anchors = [];
+
+  // Solo cuentan las secciones que existen en la página (una página puede omitir la galería, por ejemplo)
   function measure() {
-    anchors = KF.map(function (k) {
+    var kfs = [], pts = [];
+    KF_ALL.forEach(function (k) {
       var el = document.getElementById(k.id);
-      if (!el) return null;
+      if (!el) return;
       var r = el.getBoundingClientRect();
-      return r.top + window.scrollY + r.height / 2;
+      kfs.push(k);
+      pts.push(r.top + window.scrollY + r.height / 2);
     });
-    // Si falta alguna sección, descartamos medición para no romper el recorrido.
-    if (anchors.some(function (a) { return a === null; })) anchors = [];
+    if (kfs.length >= 2) { KF = kfs; anchors = pts; } else { KF = KF_ALL.slice(0, 1); anchors = []; }
   }
 
   function lerp(a, b, t) { return a + (b - a) * t; }

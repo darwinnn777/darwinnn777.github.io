@@ -27,7 +27,9 @@
       const links = (p.url || p.repo) ? '<div class="proj-links">' +
         (p.url ? '<a href="' + escHTML(p.url) + '" target="_blank" rel="noopener">Demo ↗</a>' : "") +
         (p.repo ? '<a href="' + escHTML(p.repo) + '" target="_blank" rel="noopener">GitHub ↗</a>' : "") + "</div>" : "";
-      return '<li class="proj reveal"><span class="mono idx">' + n + '</span><h3 class="proj-title">' + escHTML(p.title) + "</h3>" +
+      // Con `page`, el título enlaza a su página y la fila entera es clicable (stretched link)
+      const title = p.page ? '<a class="proj-open" href="' + escHTML(p.page) + '">' + escHTML(p.title) + "</a>" : escHTML(p.title);
+      return '<li class="proj reveal' + (p.page ? " has-page" : "") + '"><span class="mono idx">' + n + '</span><h3 class="proj-title">' + title + "</h3>" +
         role + desc + stack + links + "</li>";
     }).join("");
     const note = $(".proj-note");
@@ -52,7 +54,8 @@
 
   /* ---------- Idioma ES / EN ---------- */
   function initI18n() {
-    const dict = (data.i18n && data.i18n.en) || {};
+    // Textos EN globales + los propios de la página (window.__PAGE_I18N__, usado en proyectos/*.html)
+    const dict = Object.assign({}, (data.i18n && data.i18n.en) || {}, window.__PAGE_I18N__ || {});
     const metaDesc = $('meta[name="description"]');
     const ogTitle = $('meta[property="og:title"]');
     const es = {
@@ -231,6 +234,30 @@
     }
   }
 
+  function initMedals() {
+    const RIM = 7;
+    document.querySelectorAll(".medal").forEach(function (medal, i) {
+      const spin = medal.querySelector(".medal-spin");
+      const front = medal.querySelector(".medal-face");
+      if (!spin || !front) return;
+      const back = front.cloneNode(true);
+      back.classList.add("is-back");
+      back.setAttribute("aria-hidden", "true");
+      back.querySelector("img").removeAttribute("loading");
+      for (let k = 0; k < RIM; k++) {
+        const rim = document.createElement("i");
+        rim.className = "medal-rim";
+        rim.setAttribute("aria-hidden", "true");
+        rim.style.setProperty("--z", (-4 + (8 / (RIM - 1)) * k).toFixed(2) + "px");
+        spin.insertBefore(rim, front);
+      }
+      spin.appendChild(back);
+      medal.style.setProperty("--spin", 24 + (i % 4) * 3 + "s");
+      medal.style.setProperty("--delay", "-" + ((i * 7) % 24) + "s");
+    });
+    document.querySelectorAll(".medal-coin").forEach(function (c) { c.classList.add("medal-3d"); });
+  }
+
   function initYear() {
     const y = $("[data-year]");
     if (y) y.textContent = String(new Date().getFullYear());
@@ -245,6 +272,7 @@
     safe(initReveals, "initReveals");
     safe(initTilt, "initTilt");
     safe(initScrollFx, "initScrollFx");
+    safe(initMedals, "initMedals");
     safe(initYear, "initYear");
     root.classList.add("js-ok");
   }
